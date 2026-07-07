@@ -1,0 +1,25 @@
+server:
+  port: 8090
+
+spring:
+  application:
+    name: roadpia-aas-server
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ${ROADPIA_DB_URL:jdbc:mysql://localhost:3306/platservice_4?serverTimezone=Asia/Seoul&characterEncoding=UTF-8}
+    username: ${ROADPIA_DB_USERNAME:platservice}
+    password: ${ROADPIA_DB_PASSWORD:}
+
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+basyx:
+  base-url: ${BASYX_BASE_URL:http://localhost:8081}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
