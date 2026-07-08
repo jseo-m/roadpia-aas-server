@@ -8,7 +8,7 @@ import java.util.List;
 public record OperationDataSubmodelElementResponse(
         @Schema(description = "AAS 모델 타입", example = "Property")
         String modelType,
-        @Schema(description = "SubmodelElement idShort", example = "temperature")
+        @Schema(description = "SubmodelElement idShort입니다. 전류는 CUR, 전압은 VLT로 응답합니다.", example = "CUR")
         String idShort,
         @Schema(description = "값 타입", example = "xs:double")
         String valueType,

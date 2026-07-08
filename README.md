@@ -105,28 +105,44 @@ https://main-tech.co.kr/aas/{factoryCode}/{areaCode}/{lineCode}/{assetType}/{ass
 
 ## OperationData
 
-현재값과 과거값 API는 아직 DB에 연결하지 않고 Mock 데이터로 응답합니다.
-
 현재값 API는 외부 응답도 AAS 구조에 맞춰 `OperationData` Submodel 형식으로 반환합니다.
 
 ```json
 {
-  "id": "mock://operation-data/P001/current",
-  "idShort": "OperationData",
+  "id": "MTK01_F1_NI1_REC01:operationData",
+  "idShort": "operationData",
   "modelType": "Submodel",
   "kind": "Instance",
-  "assetCode": "P001",
+  "assetCode": "MTK01_F1_NI1_REC01",
   "submodelElements": [
     {
       "modelType": "Property",
-      "idShort": "temperature",
+      "idShort": "VLT",
       "valueType": "xs:double",
-      "value": 42.5,
+      "value": 12.5,
       "qualifiers": [
         {
           "type": "unit",
           "valueType": "xs:string",
-          "value": "C"
+          "value": "V"
+        },
+        {
+          "type": "measuredAt",
+          "valueType": "xs:dateTime",
+          "value": "2026-06-26T14:10:00+09:00"
+        }
+      ]
+    },
+    {
+      "modelType": "Property",
+      "idShort": "CUR",
+      "valueType": "xs:double",
+      "value": 120.0,
+      "qualifiers": [
+        {
+          "type": "unit",
+          "valueType": "xs:string",
+          "value": "A"
         },
         {
           "type": "measuredAt",
@@ -139,7 +155,7 @@ https://main-tech.co.kr/aas/{factoryCode}/{areaCode}/{lineCode}/{assetType}/{ass
 }
 ```
 
-DB 연동 시에는 `repository/OperationDataRepository` 구현체를 MyBatis 또는 JPA 기반 구현으로 교체하면 됩니다. Controller와 Service의 외부 계약은 유지하는 방향으로 설계되어 있습니다.
+현재 운전 데이터는 `plating_line_element` 테이블에서 `plating_element_type_index` 3, 4를 조회합니다. 응답 idShort는 전압 `VLT`, 전류 `CUR`입니다.
 
 ## 설정
 

@@ -118,14 +118,32 @@ public final class AasOpenApiExamples {
                     "submodelElements": [
                       {
                         "modelType": "Property",
-                        "idShort": "temperature",
+                        "idShort": "VLT",
                         "valueType": "xs:double",
-                        "value": 42.5,
+                        "value": 12.5,
                         "qualifiers": [
                           {
                             "type": "unit",
                             "valueType": "xs:string",
-                            "value": "C"
+                            "value": "V"
+                          },
+                          {
+                            "type": "measuredAt",
+                            "valueType": "xs:dateTime",
+                            "value": "2026-06-25T10:30:00+09:00"
+                          }
+                        ]
+                      },
+                      {
+                        "modelType": "Property",
+                        "idShort": "CUR",
+                        "valueType": "xs:double",
+                        "value": 120.0,
+                        "qualifiers": [
+                          {
+                            "type": "unit",
+                            "valueType": "xs:string",
+                            "value": "A"
                           },
                           {
                             "type": "measuredAt",
