@@ -5,13 +5,15 @@
 
 <mapper namespace="org.payment.mapper.operation.PlatingLineElementMapper">
     <select id="findCurrentValuesByAssetCode"
-            parameterType="string"
-            resultType="org.payment.domain.operation.PlatingLineElementRow">
+            resultType="org.payment.domain.operation.OperationMetricRow">
         SELECT
-            plating_element_type_index AS platingElementTypeIndex,
-            plating_now_value AS platingNowValue
-        FROM plating_line_element
-        WHERE `assetCode` = #{assetCode}
-          AND plating_element_type_index IN (3, 4)
+            `${typeIndexColumn}` AS typeIndex,
+            `${valueColumn}` AS value
+        FROM `${tableName}`
+        WHERE `${assetCodeColumn}` = #{assetCode}
+          AND `${typeIndexColumn}` IN
+          <foreach collection="typeIndexes" item="typeIndex" open="(" separator="," close=")">
+              #{typeIndex}
+          </foreach>
     </select>
 </mapper>

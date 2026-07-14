@@ -3,6 +3,7 @@ build/
 .idea/
 .codex-backups/
 .codex-rollback/
+aasx-disabled/
 src/main/resources/application-local.yml
 *.log
 *.tmp

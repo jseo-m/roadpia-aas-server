@@ -52,7 +52,7 @@ Java 17이 필요합니다.
 Windows PowerShell:
 
 ```powershell
-.\gradlew.bat bootRun
+.\gradlew.bat bootRun --args="--spring.profiles.active=maintech,local"
 ```
 
 Spring Boot Swagger UI:
@@ -155,7 +155,16 @@ https://main-tech.co.kr/aas/{factoryCode}/{areaCode}/{lineCode}/{assetType}/{ass
 }
 ```
 
-현재 운전 데이터는 `plating_line_element` 테이블에서 `plating_element_type_index` 3, 4를 조회합니다. 응답 idShort는 전압 `VLT`, 전류 `CUR`입니다.
+현재 운전 데이터는 실행 프로필별 설정에서 자산 라인에 맞는 테이블과 metric을 선택해 조회합니다. 메인텍 설정은 `application-maintech.yml`에 있으며, 현재 매핑은 아래와 같습니다.
+
+```text
+NI1  -> platservice1
+NI2  -> platservice2
+CUSN -> platservice3
+NISN -> platservice4
+```
+
+각 테이블에서 `plating_element_type_index` 3은 전압 `VLT`, 4는 전류 `CUR`로 응답합니다.
 
 ## 설정
 
@@ -185,8 +194,10 @@ $env:BASYX_BASE_URL="http://localhost:8081"
 로컬 PC 전용 DB 설정은 Git에 올리지 않는 `src/main/resources/application-local.yml`에 두고 아래처럼 실행합니다.
 
 ```powershell
-.\gradlew.bat bootRun --args="--spring.profiles.active=local"
+.\gradlew.bat bootRun --args="--spring.profiles.active=maintech,local"
 ```
+
+Windows에서 프로젝트 루트의 `run-local.bat`를 실행해도 같은 명령으로 서버를 시작합니다.
 
 ## 롤백 메모
 
