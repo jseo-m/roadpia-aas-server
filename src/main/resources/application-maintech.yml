@@ -4,7 +4,7 @@ operation-data:
       area-code: F1
       line-code: NI1
       asset-type: REC
-      table-name: platservice1
+      table-name: platservice_1
       asset-code-column: assetCode
       type-index-column: plating_element_type_index
       value-column: plating_now_value
@@ -23,7 +23,7 @@ operation-data:
       area-code: F1
       line-code: NI2
       asset-type: REC
-      table-name: platservice2
+      table-name: platservice_2
       asset-code-column: assetCode
       type-index-column: plating_element_type_index
       value-column: plating_now_value
@@ -42,7 +42,7 @@ operation-data:
       area-code: F1
       line-code: CUSN
       asset-type: REC
-      table-name: platservice3
+      table-name: platservice_3
       asset-code-column: assetCode
       type-index-column: plating_element_type_index
       value-column: plating_now_value
@@ -61,7 +61,7 @@ operation-data:
       area-code: F1
       line-code: NISN
       asset-type: REC
-      table-name: platservice4
+      table-name: platservice_4
       asset-code-column: assetCode
       type-index-column: plating_element_type_index
       value-column: plating_now_value
