@@ -77,6 +77,7 @@ public class OperationDataService {
                 ));
 
         List<OperationMetricRow> rows = platingLineElementMapper.findCurrentValuesByAssetCode(
+                source.getSchemaName(),
                 source.getTableName(),
                 source.getAssetCodeColumn(),
                 source.getTypeIndexColumn(),
@@ -168,6 +169,9 @@ public class OperationDataService {
     }
 
     private void validateSource(OperationDataProperties.Source source) {
+        if (source.getSchemaName() != null && !source.getSchemaName().isBlank()) {
+            validateIdentifier(source.getSchemaName(), "schemaName");
+        }
         validateIdentifier(source.getTableName(), "tableName");
         validateIdentifier(source.getAssetCodeColumn(), "assetCodeColumn");
         validateIdentifier(source.getTypeIndexColumn(), "typeIndexColumn");

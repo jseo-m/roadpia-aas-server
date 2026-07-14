@@ -10,6 +10,7 @@ import java.util.List;
 public interface PlatingLineElementMapper {
 
     List<OperationMetricRow> findCurrentValuesByAssetCode(
+            @Param("schemaName") String schemaName,
             @Param("tableName") String tableName,
             @Param("assetCodeColumn") String assetCodeColumn,
             @Param("typeIndexColumn") String typeIndexColumn,

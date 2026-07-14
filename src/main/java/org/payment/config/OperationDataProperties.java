@@ -24,6 +24,7 @@ public class OperationDataProperties {
         private String areaCode;
         private String lineCode;
         private String assetType;
+        private String schemaName;
         private String tableName;
         private String assetCodeColumn;
         private String typeIndexColumn;

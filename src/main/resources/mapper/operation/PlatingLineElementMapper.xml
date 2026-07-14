@@ -9,7 +9,15 @@
         SELECT
             `${typeIndexColumn}` AS typeIndex,
             `${valueColumn}` AS value
-        FROM `${tableName}`
+        FROM
+        <choose>
+            <when test="schemaName != null and schemaName != ''">
+                `${schemaName}`.`${tableName}`
+            </when>
+            <otherwise>
+                `${tableName}`
+            </otherwise>
+        </choose>
         WHERE `${assetCodeColumn}` = #{assetCode}
           AND `${typeIndexColumn}` IN
           <foreach collection="typeIndexes" item="typeIndex" open="(" separator="," close=")">

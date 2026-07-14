@@ -158,10 +158,10 @@ https://main-tech.co.kr/aas/{factoryCode}/{areaCode}/{lineCode}/{assetType}/{ass
 현재 운전 데이터는 실행 프로필별 설정에서 자산 라인에 맞는 테이블과 metric을 선택해 조회합니다. 메인텍 설정은 `application-maintech.yml`에 있으며, 현재 매핑은 아래와 같습니다.
 
 ```text
-NI1  -> platservice1
-NI2  -> platservice2
-CUSN -> platservice3
-NISN -> platservice4
+NI1  -> platservice_1.plating_line_element
+NI2  -> platservice_2.plating_line_element
+CUSN -> platservice_3.plating_line_element
+NISN -> platservice_4.plating_line_element
 ```
 
 각 테이블에서 `plating_element_type_index` 3은 전압 `VLT`, 4는 전류 `CUR`로 응답합니다.
