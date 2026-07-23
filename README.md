@@ -61,6 +61,15 @@ Spring Boot Swagger UI:
 http://localhost:8090/swagger-ui.html
 ```
 
+Swagger UI와 OpenAPI JSON은 Basic Auth로 보호됩니다.
+
+```text
+username: admin
+password: 1q2w3r!@
+```
+
+실제 `/api/**` API 호출은 Swagger 인증 없이 접근할 수 있습니다.
+
 OpenAPI JSON:
 
 ```text
@@ -188,6 +197,8 @@ $env:ROADPIA_DB_URL="jdbc:mysql://localhost:3306/platservice_4?serverTimezone=As
 $env:ROADPIA_DB_USERNAME="platservice"
 $env:ROADPIA_DB_PASSWORD="password"
 $env:BASYX_BASE_URL="http://localhost:8081"
+$env:SWAGGER_USERNAME="admin"
+$env:SWAGGER_PASSWORD="1q2w3r!@"
 .\gradlew.bat bootRun
 ```
 

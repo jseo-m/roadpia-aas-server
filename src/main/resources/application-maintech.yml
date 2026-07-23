@@ -22,6 +22,21 @@ operation-data:
           sort-order: 2
     - factory-code: MTK01
       area-code: F1
+      line-code: NI1
+      asset-type: TEMP
+      schema-name: platservice_1
+      table-name: plating_line_element
+      asset-code-column: assetCode
+      type-index-column: plating_element_type_index
+      value-column: plating_now_value
+      metrics:
+        - type-index: 2
+          id-short: TMP
+          unit: C
+          value-type: xs:float
+          sort-order: 1
+    - factory-code: MTK01
+      area-code: F1
       line-code: NI2
       asset-type: REC
       schema-name: platservice_2
@@ -40,6 +55,21 @@ operation-data:
           unit: A
           value-type: xs:double
           sort-order: 2
+    - factory-code: MTK01
+      area-code: F1
+      line-code: NI2
+      asset-type: TEMP
+      schema-name: platservice_2
+      table-name: plating_line_element
+      asset-code-column: assetCode
+      type-index-column: plating_element_type_index
+      value-column: plating_now_value
+      metrics:
+        - type-index: 2
+          id-short: TMP
+          unit: C
+          value-type: xs:float
+          sort-order: 1
     - factory-code: MTK01
       area-code: F1
       line-code: CUSN
@@ -62,6 +92,21 @@ operation-data:
           sort-order: 2
     - factory-code: MTK01
       area-code: F1
+      line-code: CUSN
+      asset-type: TEMP
+      schema-name: platservice_3
+      table-name: plating_line_element
+      asset-code-column: assetCode
+      type-index-column: plating_element_type_index
+      value-column: plating_now_value
+      metrics:
+        - type-index: 2
+          id-short: TMP
+          unit: C
+          value-type: xs:float
+          sort-order: 1
+    - factory-code: MTK01
+      area-code: F1
       line-code: NISN
       asset-type: REC
       schema-name: platservice_4
@@ -80,3 +125,18 @@ operation-data:
           unit: A
           value-type: xs:double
           sort-order: 2
+    - factory-code: MTK01
+      area-code: F1
+      line-code: NISN
+      asset-type: TEMP
+      schema-name: platservice_4
+      table-name: plating_line_element
+      asset-code-column: assetCode
+      type-index-column: plating_element_type_index
+      value-column: plating_now_value
+      metrics:
+        - type-index: 2
+          id-short: TMP
+          unit: C
+          value-type: xs:float
+          sort-order: 1

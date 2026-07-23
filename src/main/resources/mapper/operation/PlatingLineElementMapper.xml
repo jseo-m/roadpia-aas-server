@@ -3,9 +3,9 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="org.payment.mapper.operation.PlatingLineElementMapper">
+<mapper namespace="org.roadpia.aas.mapper.operation.PlatingLineElementMapper">
     <select id="findCurrentValuesByAssetCode"
-            resultType="org.payment.domain.operation.OperationMetricRow">
+            resultType="org.roadpia.aas.domain.operation.OperationMetricRow">
         SELECT
             `${typeIndexColumn}` AS typeIndex,
             `${valueColumn}` AS value
